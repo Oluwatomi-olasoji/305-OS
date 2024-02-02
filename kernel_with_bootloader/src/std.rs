@@ -63,3 +63,12 @@ pub fn input_str() -> Option<String> {
     };
     Some(input) //return the final input string
 }
+
+//CA
+#[macro_export]
+macro_rules! input_str {
+    ($prompt:expr) => {{
+        print!("{}", $prompt);
+        input_str()
+    }};
+}
